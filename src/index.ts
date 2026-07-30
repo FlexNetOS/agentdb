@@ -25,8 +25,25 @@ export { LearningSystem } from './controllers/LearningSystem.js';
 export { ReasoningBank } from './controllers/ReasoningBank.js';
 
 // Embedding services
-export { EmbeddingService } from './controllers/EmbeddingService.js';
+export {
+  EmbeddingService,
+  registerEmbeddingModelRolePolicy
+} from './controllers/EmbeddingService.js';
 export { EnhancedEmbeddingService } from './controllers/EnhancedEmbeddingService.js';
+export {
+  EmbeddingSpaceMismatchError,
+  applyRoleTemplate,
+  assertEmbeddingSpaceCompatible,
+  createEmbeddingSpaceIdentity,
+  embeddingSpacesEqual,
+  type EmbeddingCompatibilityOperation,
+  type EmbeddingProvenanceType,
+  type EmbeddingRole,
+  type EmbeddingRolePolicy,
+  type EmbeddingSpaceIdentity,
+  type EmbeddingSpaceIdentityInput,
+  type MemoryProvenance
+} from './embedding/index.js';
 
 // Model cache (offline .rvf model loading)
 export { ModelCacheLoader } from './model/ModelCacheLoader.js';
@@ -64,6 +81,26 @@ export {
   buildSafeSetClause,
   ValidationError,
 } from './security/input-validation.js';
+export {
+  buildMcpToolPolicy,
+  filterMcpTools,
+  isMcpToolAllowed,
+  type AgentDbMcpProfile,
+  type McpToolPolicy,
+} from './security/mcp-policy.js';
+export {
+  MetaHarnessGateway,
+  type PromotionDecision,
+  type PromotionEvidence,
+} from './governance/MetaHarnessGateway.js';
+export {
+  RvfExperimentBranch,
+  StaleExperimentBaselineError,
+  StaleExperimentRevisionError,
+  assertExperimentRevisionCompatible,
+  type ExperimentAnchor,
+  type ExperimentReceipt,
+} from './governance/RvfExperimentBranch.js';
 
 // Vector Quantization
 export {
